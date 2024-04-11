@@ -15,7 +15,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  VITE_APP_GITHUB_TOKEN: ${{ secrets.VITE_APP_GITHUB_TOKEN }}
+  ENV_VITE_APP_GITHUB_TOKEN: ${{ secrets.VITE_APP_GITHUB_TOKEN }}
 
 jobs:
   deploy:
