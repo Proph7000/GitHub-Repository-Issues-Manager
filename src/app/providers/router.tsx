@@ -10,7 +10,7 @@ import { MainLayout } from './layouts'
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/GitHub-Repository-Issues-Manager',
     element: <MainLayout />,
     children: [MainPageRouter],
   },
