@@ -26,9 +26,7 @@ This project is a GitHub repository issues manager built with React (Vite) and T
 - React Toastify
 - Eslint (custom settings) + Prettier
 
-## Demo
-
-[Add a link to the live demo if available]
+## [[Demo](https://proph7000.github.io/GitHub-Repository-Issues-Manager/)]
 
 ## Installation
 
