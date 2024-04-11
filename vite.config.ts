@@ -5,8 +5,8 @@ import svgr from 'vite-plugin-svgr'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/GitHub-Repository-Issues-Manager/',
   plugins: [svgr(), react()],
+  base: 'GitHub-Repository-Issues-Manager',
   server: {
     host: true,
   },
