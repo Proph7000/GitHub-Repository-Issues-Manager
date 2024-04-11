@@ -5,6 +5,6 @@ export async function fetchIssues(link: string) {
 
   return await api.request(`GET /repos/${linkToGitHubApi}`, {
     owner: 'Proph7000',
-    repo: 'test-task5',
+    repo: 'GitHub-Repository-Issues-Manager',
   })
 }

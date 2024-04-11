@@ -8,6 +8,7 @@ export function useDownloadIssues(getLink: () => string) {
   const setIssues = useIssuesStore((state) => state.setIssues)
   const setRepoInfo = useIssuesStore((state) => state.setRepoInfo)
   const reset = useIssuesStore((state) => state.reset)
+  const noIssues = useIssuesStore((state) => state.noIssues)
 
   const handleDownloadIssues = async () => {
     try {
@@ -19,7 +20,9 @@ export function useDownloadIssues(getLink: () => string) {
 
       if (localStorage.getItem(link)) {
         useIssuesStore.persist.rehydrate()
+      }
 
+      if (!noIssues) {
         return
       }
 
@@ -39,6 +42,12 @@ export function useDownloadIssues(getLink: () => string) {
 
       if (responses[1].status === 'fulfilled') {
         repoInfo = responses[1].value.data as IRepo
+      }
+
+      if (responses[0].status === 'rejected') {
+        toast.error('Oops...')
+
+        return
       }
 
       if (repoInfo) {

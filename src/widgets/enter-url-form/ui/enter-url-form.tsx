@@ -33,7 +33,6 @@ export function EnterUrlForm() {
                     ref={field.ref}
                     status={fieldState.error ? 'error' : ''}
                     placeholder="Enter URL with the GitHub repo issues"
-                    onPressEnter={handleDownloadIssues}
                   />
 
                   {!!fieldState.error && (
@@ -46,12 +45,7 @@ export function EnterUrlForm() {
 
           <Col span={8}>
             <Row style={{ gap: 8 }}>
-              <Button
-                type="primary"
-                onClick={handleDownloadIssues}
-                htmlType="submit"
-                style={{ flex: 1 }}
-              >
+              <Button type="primary" htmlType="submit" style={{ flex: 1 }}>
                 Load issues
               </Button>
 

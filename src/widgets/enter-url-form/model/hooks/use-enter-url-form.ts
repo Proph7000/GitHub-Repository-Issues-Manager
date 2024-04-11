@@ -25,6 +25,7 @@ export function useEnterUrlForm() {
     defaultValues: {
       url: '',
     },
+    mode: 'onSubmit'
   })
 
   return form
