@@ -1,0 +1,12 @@
+.issue-link {
+  margin-top: 0;
+}
+
+.issue-link:hover {
+  text-decoration: underline;
+}
+
+.divider {
+  height: 1.4rem;
+  border-inline-color: #00000055;
+}
