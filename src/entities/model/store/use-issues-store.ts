@@ -26,6 +26,7 @@ interface IIssuesStore extends IIssuesState {
   addIssue: (issue: IIssue, type: TIssueType, index?: number) => void
   deleteIssue: (issueId: IIssue['id'], type: TIssueType) => void
   reset: () => void
+  getNoIssues: () => boolean
 }
 
 const initialState: IIssuesState = {
@@ -38,11 +39,13 @@ const initialState: IIssuesState = {
 
 export const useIssuesStore = create<IIssuesStore>()(
   persist(
-    immer((set) => ({
+    immer((set, get) => ({
       ...initialState,
       reset: () => set(initialState),
 
       setRepoInfo: (repoInfo) => set({ repoInfo }),
+
+      getNoIssues: () => get().noIssues,
 
       setIssues: (issues, type) =>
         set((state) => {

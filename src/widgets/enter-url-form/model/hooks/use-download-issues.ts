@@ -8,7 +8,7 @@ export function useDownloadIssues(getLink: () => string) {
   const setIssues = useIssuesStore((state) => state.setIssues)
   const setRepoInfo = useIssuesStore((state) => state.setRepoInfo)
   const reset = useIssuesStore((state) => state.reset)
-  const noIssues = useIssuesStore((state) => state.noIssues)
+  const getNoIssues = useIssuesStore((state) => state.getNoIssues)
 
   const handleDownloadIssues = async () => {
     try {
@@ -22,7 +22,7 @@ export function useDownloadIssues(getLink: () => string) {
         useIssuesStore.persist.rehydrate()
       }
 
-      if (!noIssues) {
+      if (!getNoIssues()) {
         return
       }
 
