@@ -6,17 +6,19 @@ import {
 
 import { MainPageRouter } from '@pages/main'
 
+import { routesPath } from '@shared/constants'
+
 import { MainLayout } from './layouts'
 
 const router = createBrowserRouter([
   {
-    path: '/GitHub-Repository-Issues-Manager',
+    path: '/',
     element: <MainLayout />,
     children: [MainPageRouter],
   },
   {
     path: '*',
-    element: <Navigate to="/GitHub-Repository-Issues-Manager" />,
+    element: <Navigate to={routesPath.mainGitHub} />,
   },
 ])
 
