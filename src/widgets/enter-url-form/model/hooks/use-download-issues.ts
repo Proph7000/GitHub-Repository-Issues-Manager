@@ -22,11 +22,13 @@ export function useDownloadIssues(getLink: () => string) {
         useIssuesStore.persist.rehydrate()
       }
 
+      if (!localStorage.getItem(link)) {
+        reset()
+      }
+
       if (!getNoIssues()) {
         return
       }
-
-      reset()
 
       let issuesResponse
       let repoInfo
